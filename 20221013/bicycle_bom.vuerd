@@ -43,26 +43,26 @@
   "table": {
     "tables": [
       {
-        "name": "ORGANIZATIONS",
-        "comment": "조직도",
+        "name": "BICYCLE_BOM",
+        "comment": "자전거 부품",
         "columns": [
           {
-            "name": "ORG_UNIQUE_ID",
-            "comment": "대푯값",
+            "name": "BICYCLE",
+            "comment": "자전거",
             "dataType": "VARCHAR(200)",
             "default": "",
             "option": {
               "autoIncrement": false,
               "primaryKey": false,
               "unique": false,
-              "notNull": false
+              "notNull": true
             },
             "ui": {
               "active": false,
               "pk": false,
               "fk": false,
               "pfk": false,
-              "widthName": 101.3154296875,
+              "widthName": 60,
               "widthComment": 60,
               "widthDataType": 89.29296875,
               "widthDefault": 60
@@ -70,36 +70,82 @@
             "id": "3e351aeb-718e-4ee2-8ad5-61c06c193bcc"
           },
           {
-            "name": "DEPARTMENT",
-            "comment": "",
-            "dataType": "",
+            "name": "PART",
+            "comment": "자전거 부품",
+            "dataType": "VARCHAR(200)",
             "default": "",
             "option": {
               "autoIncrement": false,
               "primaryKey": false,
               "unique": false,
-              "notNull": false
+              "notNull": true
             },
             "ui": {
               "active": false,
               "pk": false,
               "fk": false,
               "pfk": false,
-              "widthName": 82.970703125,
-              "widthComment": 60,
-              "widthDataType": 60,
+              "widthName": 60,
+              "widthComment": 71.5703125,
+              "widthDataType": 89.29296875,
               "widthDefault": 60
             },
             "id": "5269db42-4d27-456f-bbef-aef63c72a8dd"
+          },
+          {
+            "name": "BICYCLE_UID",
+            "comment": "자전거 대푯값",
+            "dataType": "POST_UNIQUE_ID",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 77.080078125,
+              "widthComment": 84.5703125,
+              "widthDataType": 105.87939453125,
+              "widthDefault": 60
+            },
+            "id": "45cc6fd2-f374-4c17-a7ec-ac0011542597"
+          },
+          {
+            "name": "BICYCLE_UID",
+            "comment": "자전거 대푯값",
+            "dataType": "POST_UNIQUE_ID",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 77.080078125,
+              "widthComment": 84.5703125,
+              "widthDataType": 105.87939453125,
+              "widthDefault": 60
+            },
+            "id": "82a7c936-2d11-43d4-85a7-40f9fd37b258"
           }
         ],
         "ui": {
-          "active": true,
+          "active": false,
           "left": 200,
           "top": 100,
-          "zIndex": 8,
-          "widthName": 103.5498046875,
-          "widthComment": 60
+          "zIndex": 4,
+          "widthName": 84.671875,
+          "widthComment": 71.5703125
         },
         "visible": true,
         "id": "e865835c-c582-459b-8b15-f69c56d57b62"
@@ -111,6 +157,33 @@
     "memos": []
   },
   "relationship": {
-    "relationships": []
+    "relationships": [
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "e865835c-c582-459b-8b15-f69c56d57b62",
+          "columnIds": [
+            "45cc6fd2-f374-4c17-a7ec-ac0011542597"
+          ],
+          "x": 614.52978515625,
+          "y": 100,
+          "direction": "top"
+        },
+        "end": {
+          "tableId": "e865835c-c582-459b-8b15-f69c56d57b62",
+          "columnIds": [
+            "82a7c936-2d11-43d4-85a7-40f9fd37b258"
+          ],
+          "x": 634.52978515625,
+          "y": 120,
+          "direction": "right"
+        },
+        "constraintName": "fk_bicycle_bom_to_bicycle_bom",
+        "visible": true,
+        "id": "ab0cdcab-c2f2-4535-bd73-8070fcc516a7"
+      }
+    ]
   }
 }
